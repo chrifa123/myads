@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Redirect Page</title>
+<style>
+  body { font-family: Arial; text-align: center; padding: 100px; background: #f4f4f4; }
+  .container { background: white; padding: 30px; border-radius: 10px; display: inline-block; }
+  #countdown { font-size: 24px; color: red; margin: 20px; }
+  #continue-btn {
+    display: none;
+    background: green; color: white; padding: 10px 20px;
+    text-decoration: none; border-radius: 5px; font-size: 18px;
+  }
+  #continue-btn:hover { background: darkgreen; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Almost There!</h1>
+  <p>Please wait for <span id="countdown">10</span> seconds</p>
+  <a id="continue-btn" href="https://loupush.com/kekYKXujI0I=?" target="_blank" rel="noopener noreferrer">Continue</a>
+</div>
+
+<script>
+  let countdown = 10;
+  const countdownEl = document.getElementById('countdown');
+  const btn = document.getElementById('continue-btn');
+
+  const interval = setInterval(() => {
+    countdown--;
+    countdownEl.textContent = countdown;
+    if (countdown <= 0) {
+      clearInterval(interval);
+      countdownEl.style.display = 'none';
+      btn.style.display = 'inline-block';
+    }
+  }, 1000);
+</script>
+
+</body>
+</html>
